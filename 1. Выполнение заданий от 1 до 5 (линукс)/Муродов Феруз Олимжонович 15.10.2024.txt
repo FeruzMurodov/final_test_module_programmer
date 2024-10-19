@@ -1,0 +1,848 @@
+feruz@feruz-VirtualBox:~$ 
+
+feruz@feruz-VirtualBox:~$ ls
+
+ snap    Документы   Изображения   Общедоступные   Шаблоны
+
+ Видео   Загрузки    Музыка       'Рабочий стол'
+
+feruz@feruz-VirtualBox:~$ cat > Pets.txt
+
+dogs, cats, mice
+
+feruz@feruz-VirtualBox:~$ cat > Pack_animals.txt
+
+horses, camels, donkeys
+
+feruz@feruz-VirtualBox:~$ ls
+
+ Pack_animals.txt   snap    Документы   Изображения   Общедоступные   Шаблоны
+
+ Pets.txt           Видео   Загрузки    Музыка       'Рабочий стол'
+
+feruz@feruz-VirtualBox:~$ cat Pets.txt Pack_animals.txt > new_file
+
+feruz@feruz-VirtualBox:~$ ls
+
+ new_file           Pets.txt   Видео       Загрузки      Музыка         'Рабочий стол'
+
+ Pack_animals.txt   snap       Документы   Изображения   Общедоступные   Шаблоны
+
+feruz@feruz-VirtualBox:~$ cat new_file 
+
+dogs, cats, mice
+
+horses, camels, donkeys
+
+feruz@feruz-VirtualBox:~$ mv new_file Human_friends.txt
+
+feruz@feruz-VirtualBox:~$ cat Human_friends.txt 
+
+dogs, cats, mice
+
+horses, camels, donkeys
+
+feruz@feruz-VirtualBox:~$ ls
+
+ Human_friends.txt   Pets.txt   Видео       Загрузки      Музыка         'Рабочий стол'
+
+ Pack_animals.txt    snap       Документы   Изображения   Общедоступные   Шаблоны
+
+feruz@feruz-VirtualBox:~$ 
+
+feruz@feruz-VirtualBox:~$ mkdir new_folder
+
+feruz@feruz-VirtualBox:~$ ls
+
+ Human_friends.txt   Pets.txt   Документы     Музыка          Шаблоны
+
+ new_folder          snap       Загрузки      Общедоступные
+
+ Pack_animals.txt    Видео      Изображения  'Рабочий стол'
+
+feruz@feruz-VirtualBox:~$ mv Human_friends.txt new_folder/
+
+feruz@feruz-VirtualBox:~$ ls
+
+ new_folder         Pets.txt   Видео       Загрузки      Музыка         'Рабочий стол'
+
+ Pack_animals.txt   snap       Документы   Изображения   Общедоступные   Шаблоны
+
+feruz@feruz-VirtualBox:~$ cd new_folder/
+
+feruz@feruz-VirtualBox:~/new_folder$ ls
+
+Human_friends.txt
+
+feruz@feruz-VirtualBox:~/new_folder$ 
+
+feruz@feruz-VirtualBox:~/new_folder$ cd
+
+feruz@feruz-VirtualBox:~$ sudo apt update
+
+[sudo] пароль для feruz: 
+
+Сущ:1 http://uz.archive.ubuntu.com/ubuntu jammy InRelease
+
+Сущ:2 https://download.docker.com/linux/ubuntu jammy InRelease                    
+
+Сущ:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                  
+
+Пол:4 http://uz.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]        
+
+Сущ:5 http://uz.archive.ubuntu.com/ubuntu jammy-backports InRelease
+
+Получено 128 kB за 1с (88.0 kB/s)         
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Может быть обновлено 140 пакетов. Запустите «apt list --upgradable» для их показа.
+
+feruz@feruz-VirtualBox:~$ sudo apt install mysql-
+
+mysql-client           mysql-common           mysql-server           mysql-source-8.0
+
+mysql-client-8.0       mysql-router           mysql-server-8.0       mysql-testsuite
+
+mysql-client-core-8.0  mysql-sandbox          mysql-server-core-8.0  mysql-testsuite-8.0
+
+feruz@feruz-VirtualBox:~$ sudo apt install mysql-server-8.0
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Будут установлены следующие дополнительные пакеты:
+
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7 libevent-pthreads-2.1-7 libfcgi-bin
+
+  libfcgi-perl libfcgi0ldbl libhtml-template-perl libmecab2 libprotobuf-lite23 mecab-ipadic
+
+  mecab-ipadic-utf8 mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common
+
+  mysql-server-core-8.0
+
+Предлагаемые пакеты:
+
+  libipc-sharedcache-perl mailx tinyca
+
+Следующие НОВЫЕ пакеты будут установлены:
+
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7 libevent-pthreads-2.1-7 libfcgi-bin
+
+  libfcgi-perl libfcgi0ldbl libhtml-template-perl libmecab2 libprotobuf-lite23 mecab-ipadic
+
+  mecab-ipadic-utf8 mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common
+
+  mysql-server-8.0 mysql-server-core-8.0
+
+Обновлено 0 пакетов, установлено 18 новых пакетов, для удаления отмечено 0 пакетов, и 140 пакетов не обновлено.
+
+Необходимо скачать 29.4 MB архивов.
+
+После данной операции объём занятого дискового пространства возрастёт на 242 MB.
+
+Хотите продолжить? [Д/н] y
+
+Пол:1 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 mysql-common all 5.8+1.0.8 [7,212 B]
+
+Пол:2 http://uz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-core-8.0 amd64 8.0.39-0ubuntu0.22.04.1 [2,762 kB]
+
+Пол:3 http://uz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-8.0 amd64 8.0.39-0ubuntu0.22.04.1 [22.7 kB]
+
+Пол:4 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libevent-core-2.1-7 amd64 2.1.12-stable-1build3 [93.9 kB]
+
+Пол:5 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libevent-pthreads-2.1-7 amd64 2.1.12-stable-1build3 [7,642 B]
+
+Пол:6 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libmecab2 amd64 0.996-14build9 [199 kB]
+
+Пол:7 http://uz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libprotobuf-lite23 amd64 3.12.4-1ubuntu7.22.04.1 [209 kB]
+
+Пол:8 http://uz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server-core-8.0 amd64 8.0.39-0ubuntu0.22.04.1 [17.6 MB]
+
+Пол:9 http://uz.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server-8.0 amd64 8.0.39-0ubuntu0.22.04.1 [1,437 kB]
+
+Пол:10 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libcgi-pm-perl all 4.54-1 [188 kB]
+
+Пол:11 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libfcgi0ldbl amd64 2.4.2-2build2 [28.0 kB]
+
+Пол:12 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libfcgi-perl amd64 0.82+ds-1build1 [22.8 kB]
+
+Пол:13 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libcgi-fast-perl all 1:2.15-1 [10.5 kB]
+
+Пол:14 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libfcgi-bin amd64 2.4.2-2build2 [11.2 kB]
+
+Пол:15 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 libhtml-template-perl all 2.97-1.1 [59.1 kB]
+
+Пол:16 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-utils amd64 0.996-14build9 [4,850 B]
+
+Пол:17 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6,718 kB]
+
+Пол:18 http://uz.archive.ubuntu.com/ubuntu jammy/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4,384 B]
+
+Получено 29.4 MB за 8с (3,770 kB/s)                                                         
+
+Предварительная настройка пакетов …
+
+Выбор ранее не выбранного пакета mysql-common.
+
+(Чтение базы данных … на данный момент установлено 193648 файлов и каталогов.)
+
+Подготовка к распаковке …/0-mysql-common_5.8+1.0.8_all.deb …
+
+Распаковывается mysql-common (5.8+1.0.8) …
+
+Выбор ранее не выбранного пакета mysql-client-core-8.0.
+
+Подготовка к распаковке …/1-mysql-client-core-8.0_8.0.39-0ubuntu0.22.04.1_amd64.deb …
+
+Распаковывается mysql-client-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Выбор ранее не выбранного пакета mysql-client-8.0.
+
+Подготовка к распаковке …/2-mysql-client-8.0_8.0.39-0ubuntu0.22.04.1_amd64.deb …
+
+Распаковывается mysql-client-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Выбор ранее не выбранного пакета libevent-core-2.1-7:amd64.
+
+Подготовка к распаковке …/3-libevent-core-2.1-7_2.1.12-stable-1build3_amd64.deb …
+
+Распаковывается libevent-core-2.1-7:amd64 (2.1.12-stable-1build3) …
+
+Выбор ранее не выбранного пакета libevent-pthreads-2.1-7:amd64.
+
+Подготовка к распаковке …/4-libevent-pthreads-2.1-7_2.1.12-stable-1build3_amd64.deb …
+
+Распаковывается libevent-pthreads-2.1-7:amd64 (2.1.12-stable-1build3) …
+
+Выбор ранее не выбранного пакета libmecab2:amd64.
+
+Подготовка к распаковке …/5-libmecab2_0.996-14build9_amd64.deb …
+
+Распаковывается libmecab2:amd64 (0.996-14build9) …
+
+Выбор ранее не выбранного пакета libprotobuf-lite23:amd64.
+
+Подготовка к распаковке …/6-libprotobuf-lite23_3.12.4-1ubuntu7.22.04.1_amd64.deb …
+
+Распаковывается libprotobuf-lite23:amd64 (3.12.4-1ubuntu7.22.04.1) …
+
+Выбор ранее не выбранного пакета mysql-server-core-8.0.
+
+Подготовка к распаковке …/7-mysql-server-core-8.0_8.0.39-0ubuntu0.22.04.1_amd64.deb …
+
+Распаковывается mysql-server-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Настраивается пакет mysql-common (5.8+1.0.8) …
+
+update-alternatives: используется /etc/mysql/my.cnf.fallback для предоставления /etc/mysql/my
+
+.cnf (my.cnf) в автоматическом режиме
+
+Выбор ранее не выбранного пакета mysql-server-8.0.
+
+(Чтение базы данных … на данный момент установлено 193867 файлов и каталогов.)
+
+Подготовка к распаковке …/0-mysql-server-8.0_8.0.39-0ubuntu0.22.04.1_amd64.deb …
+
+Распаковывается mysql-server-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Выбор ранее не выбранного пакета libcgi-pm-perl.
+
+Подготовка к распаковке …/1-libcgi-pm-perl_4.54-1_all.deb …
+
+Распаковывается libcgi-pm-perl (4.54-1) …
+
+Выбор ранее не выбранного пакета libfcgi0ldbl:amd64.
+
+Подготовка к распаковке …/2-libfcgi0ldbl_2.4.2-2build2_amd64.deb …
+
+Распаковывается libfcgi0ldbl:amd64 (2.4.2-2build2) …
+
+Выбор ранее не выбранного пакета libfcgi-perl:amd64.
+
+Подготовка к распаковке …/3-libfcgi-perl_0.82+ds-1build1_amd64.deb …
+
+Распаковывается libfcgi-perl:amd64 (0.82+ds-1build1) …
+
+Выбор ранее не выбранного пакета libcgi-fast-perl.
+
+Подготовка к распаковке …/4-libcgi-fast-perl_1%3a2.15-1_all.deb …
+
+Распаковывается libcgi-fast-perl (1:2.15-1) …
+
+Выбор ранее не выбранного пакета libfcgi-bin.
+
+Подготовка к распаковке …/5-libfcgi-bin_2.4.2-2build2_amd64.deb …
+
+Распаковывается libfcgi-bin (2.4.2-2build2) …
+
+Выбор ранее не выбранного пакета libhtml-template-perl.
+
+Подготовка к распаковке …/6-libhtml-template-perl_2.97-1.1_all.deb …
+
+Распаковывается libhtml-template-perl (2.97-1.1) …
+
+Выбор ранее не выбранного пакета mecab-utils.
+
+Подготовка к распаковке …/7-mecab-utils_0.996-14build9_amd64.deb …
+
+Распаковывается mecab-utils (0.996-14build9) …
+
+Выбор ранее не выбранного пакета mecab-ipadic.
+
+Подготовка к распаковке …/8-mecab-ipadic_2.7.0-20070801+main-3_all.deb …
+
+Распаковывается mecab-ipadic (2.7.0-20070801+main-3) …
+
+Выбор ранее не выбранного пакета mecab-ipadic-utf8.
+
+Подготовка к распаковке …/9-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb …
+
+Распаковывается mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+
+Настраивается пакет libmecab2:amd64 (0.996-14build9) …
+
+Настраивается пакет mysql-client-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Настраивается пакет libfcgi0ldbl:amd64 (2.4.2-2build2) …
+
+Настраивается пакет libcgi-pm-perl (4.54-1) …
+
+Настраивается пакет libfcgi-bin (2.4.2-2build2) …
+
+Настраивается пакет libhtml-template-perl (2.97-1.1) …
+
+Настраивается пакет libprotobuf-lite23:amd64 (3.12.4-1ubuntu7.22.04.1) …
+
+Настраивается пакет mecab-utils (0.996-14build9) …
+
+Настраивается пакет libevent-core-2.1-7:amd64 (2.1.12-stable-1build3) …
+
+Настраивается пакет mysql-client-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Настраивается пакет libfcgi-perl:amd64 (0.82+ds-1build1) …
+
+Настраивается пакет libevent-pthreads-2.1-7:amd64 (2.1.12-stable-1build3) …
+
+Настраивается пакет mecab-ipadic (2.7.0-20070801+main-3) …
+
+Compiling IPA dictionary for Mecab.  This takes long time...
+
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+
+emitting double-array: 100% |###########################################| 
+
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+
+emitting double-array: 100% |###########################################| 
+
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+
+emitting matrix      : 100% |###########################################| 
+
+
+
+done!
+
+update-alternatives: используется /var/lib/mecab/dic/ipadic для предоставления /var/lib/mecab
+
+/dic/debian (mecab-dictionary) в автоматическом режиме
+
+Настраивается пакет libcgi-fast-perl (1:2.15-1) …
+
+Настраивается пакет mysql-server-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Настраивается пакет mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+
+Compiling IPA dictionary for Mecab.  This takes long time...
+
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+
+emitting double-array: 100% |###########################################| 
+
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+
+emitting double-array: 100% |###########################################| 
+
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+
+emitting matrix      : 100% |###########################################| 
+
+
+
+done!
+
+update-alternatives: используется /var/lib/mecab/dic/ipadic-utf8 для предоставления /var/lib/
+
+mecab/dic/debian (mecab-dictionary) в автоматическом режиме
+
+Настраивается пакет mysql-server-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/mysql/my.cnf (
+
+my.cnf) в автоматическом режиме
+
+Renaming removed key_buffer and myisam-recover options (if present)
+
+mysqld will log errors to /var/log/mysql/error.log
+
+mysqld is running as pid 7254
+
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/syst
+
+em/mysql.service.
+
+Обрабатываются триггеры для man-db (2.10.2-1) …
+
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.8) …
+
+feruz@feruz-VirtualBox:~$ 
+
+feruz@feruz-VirtualBox:~$ sudo wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+
+[sudo] пароль для feruz: 
+
+--2024-10-15 11:21:15--  https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+
+Распознаётся dev.mysql.com (dev.mysql.com)… 23.211.74.232, 2a02:2d8:0:7987::2e31, 2a02:2d8:0:7989::2e31
+
+Подключение к dev.mysql.com (dev.mysql.com)|23.211.74.232|:443... соединение установлено.
+
+HTTP-запрос отправлен. Ожидание ответа… 302 Moved Temporarily
+
+Адрес: https://repo.mysql.com//mysql-apt-config_0.8.32-1_all.deb [переход]
+
+--2024-10-15 11:21:17--  https://repo.mysql.com//mysql-apt-config_0.8.32-1_all.deb
+
+Распознаётся repo.mysql.com (repo.mysql.com)… 104.81.113.179, 2a02:26f0:d200:889::1d68, 2a02:26f0:d200:888::1d68
+
+Подключение к repo.mysql.com (repo.mysql.com)|104.81.113.179|:443... соединение установлено.
+
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+
+Длина: 18068 (18K) [application/x-debian-package]
+
+Сохранение в: ‘mysql-apt-config_0.8.32-1_all.deb’
+
+
+
+mysql-apt-config_0.8.32 100%[==============================>]  17.64K  --.-KB/s    за 0.002s  
+
+
+
+2024-10-15 11:21:17 (9.20 MB/s) - ‘mysql-apt-config_0.8.32-1_all.deb’ сохранён [18068/18068]
+
+
+
+feruz@feruz-VirtualBox:~$ sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+
+Выбор ранее не выбранного пакета mysql-apt-config.
+
+(Чтение базы данных … на данный момент установлено 194032 файла и каталога.)
+
+Подготовка к распаковке mysql-apt-config_0.8.32-1_all.deb …
+
+Распаковывается mysql-apt-config (0.8.32-1) …
+
+Настраивается пакет mysql-apt-config (0.8.32-1) …
+
+feruz@feruz-VirtualBox:~$ sudo apt update
+
+Пол:1 http://repo.mysql.com/apt/ubuntu jammy InRelease [25.1 kB]
+
+Сущ:2 http://security.ubuntu.com/ubuntu jammy-security InRelease                              
+
+Сущ:3 http://uz.archive.ubuntu.com/ubuntu jammy InRelease                                     
+
+Сущ:4 https://download.docker.com/linux/ubuntu jammy InRelease                                
+
+Сущ:5 http://uz.archive.ubuntu.com/ubuntu jammy-updates InRelease                 
+
+Сущ:6 http://uz.archive.ubuntu.com/ubuntu jammy-backports InRelease
+
+Пол:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts Sources [965 B]
+
+Пол:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config amd64 Packages [566 B]
+
+Пол:9 http://repo.mysql.com/apt/ubuntu jammy/mysql-apt-config i386 Packages [566 B]
+
+Пол:10 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 Packages [14.5 kB]
+
+Пол:11 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools amd64 Packages [4,176 B]
+
+Пол:12 http://repo.mysql.com/apt/ubuntu jammy/mysql-tools i386 Packages [459 B]
+
+Получено 46.4 kB за 1с (33.8 kB/s)         
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Может быть обновлён 141 пакет. Запустите «apt list --upgradable» для показа.
+
+feruz@feruz-VirtualBox:~$ sudo apt install my
+
+Display all 163 possibilities? (y or n)
+
+feruz@feruz-VirtualBox:~$ sudo apt install mysql-server
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Следующие пакеты устанавливались автоматически и больше не требуются:
+
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7 libevent-pthreads-2.1-7 libfcgi-bin
+
+  libfcgi-perl libfcgi0ldbl libhtml-template-perl libprotobuf-lite23
+
+Для их удаления используйте «sudo apt autoremove».
+
+Будут установлены следующие дополнительные пакеты:
+
+  mysql-client mysql-common mysql-community-client mysql-community-client-core
+
+  mysql-community-client-plugins mysql-community-server mysql-community-server-core
+
+Следующие пакеты будут УДАЛЕНЫ:
+
+  mysql-client-8.0 mysql-client-core-8.0 mysql-server-8.0 mysql-server-core-8.0
+
+Следующие НОВЫЕ пакеты будут установлены:
+
+  mysql-client mysql-community-client mysql-community-client-core
+
+  mysql-community-client-plugins mysql-community-server mysql-community-server-core
+
+  mysql-server
+
+Следующие пакеты будут обновлены:
+
+  mysql-common
+
+Обновлено 1 пакетов, установлено 7 новых пакетов, для удаления отмечено 4 пакетов, и 140 пакетов не обновлено.
+
+Необходимо скачать 36.5 MB архивов.
+
+После данной операции объём занятого дискового пространства возрастёт на 46.8 MB.
+
+Хотите продолжить? [Д/н] y
+
+Пол:1 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-common amd64 8.4.3-1ubuntu22.04 [60.1 kB]
+
+Пол:2 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-community-client-plugins amd64 8.4.3-1ubuntu22.04 [1,522 kB]
+
+Пол:3 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-community-client-core amd64 8.4.3-1ubuntu22.04 [1,865 kB]
+
+Пол:4 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-community-client amd64 8.4.3-1ubuntu22.04 [2,270 kB]
+
+Пол:5 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-client amd64 8.4.3-1ubuntu22.04 [58.8 kB]
+
+Пол:6 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-community-server-core amd64 8.4.3-1ubuntu22.04 [30.6 MB]
+
+Пол:7 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-community-server amd64 8.4.3-1ubuntu22.04 [68.8 kB]
+
+Пол:8 http://repo.mysql.com/apt/ubuntu jammy/mysql-8.4-lts amd64 mysql-server amd64 8.4.3-1ubuntu22.04 [58.8 kB]
+
+Получено 36.5 MB за 7с (5,005 kB/s)                                                           
+
+Предварительная настройка пакетов …
+
+(Чтение базы данных … на данный момент установлено 194037 файлов и каталогов.)
+
+Удаляется mysql-server-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+update-alternatives: используется /etc/mysql/my.cnf.fallback для предоставления /etc/mysql/my.c
+
+nf (my.cnf) в автоматическом режиме
+
+Удаляется mysql-client-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Удаляется mysql-client-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+Удаляется mysql-server-core-8.0 (8.0.39-0ubuntu0.22.04.1) …
+
+(Чтение базы данных … на данный момент установлено 193834 файла и каталога.)
+
+Подготовка к распаковке …/0-mysql-common_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-common (8.4.3-1ubuntu22.04) на замену (5.8+1.0.8) …
+
+Выбор ранее не выбранного пакета mysql-community-client-plugins.
+
+Подготовка к распаковке …/1-mysql-community-client-plugins_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-community-client-plugins (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-community-client-core.
+
+Подготовка к распаковке …/2-mysql-community-client-core_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-community-client-core (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-community-client.
+
+Подготовка к распаковке …/3-mysql-community-client_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-community-client (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-client.
+
+Подготовка к распаковке …/4-mysql-client_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-client (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-community-server-core.
+
+Подготовка к распаковке …/5-mysql-community-server-core_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-community-server-core (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-community-server.
+
+Подготовка к распаковке …/6-mysql-community-server_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-community-server (8.4.3-1ubuntu22.04) …
+
+Выбор ранее не выбранного пакета mysql-server.
+
+Подготовка к распаковке …/7-mysql-server_8.4.3-1ubuntu22.04_amd64.deb …
+
+Распаковывается mysql-server (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-common (8.4.3-1ubuntu22.04) …
+
+Устанавливается новая версия файла настройки /etc/mysql/conf.d/mysql.cnf …
+
+Устанавливается новая версия файла настройки /etc/mysql/my.cnf.fallback …
+
+Настраивается пакет mysql-community-server-core (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-community-client-plugins (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-community-client-core (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-community-client (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-client (8.4.3-1ubuntu22.04) …
+
+Настраивается пакет mysql-community-server (8.4.3-1ubuntu22.04) …
+
+Устанавливается новая версия файла настройки /etc/apparmor.d/usr.sbin.mysqld …
+
+Устанавливается новая версия файла настройки /etc/mysql/mysql.cnf …
+
+Устанавливается новая версия файла настройки /etc/mysql/mysql.conf.d/mysqld.cnf …
+
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/mysql/my.cnf (my
+
+.cnf) в автоматическом режиме
+
+Настраивается пакет mysql-server (8.4.3-1ubuntu22.04) …
+
+Обрабатываются триггеры для man-db (2.10.2-1) …
+
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.8) …
+
+feruz@feruz-VirtualBox:~$ 
+
+feruz@feruz-VirtualBox:~$ wget https://download.virtualbox.org/virtualbox/7.1.2/virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb
+
+--2024-10-15 15:37:54--  https://download.virtualbox.org/virtualbox/7.1.2/virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb
+
+Распознаётся download.virtualbox.org (download.virtualbox.org)… 2.17.156.82
+
+Подключение к download.virtualbox.org (download.virtualbox.org)|2.17.156.82|:443... соединение установлено.
+
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+
+Длина: 104039232 (99M) [text/plain]
+
+Сохранение в: ‘virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb’
+
+
+
+virtualbox-7.1_7.1.2-16 100%[==============================>]  99.22M  2.45MB/s    за 33s     
+
+
+
+2024-10-15 15:38:27 (3.05 MB/s) - ‘virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb’ сохранён [104039232/104039232]
+
+
+
+feruz@feruz-VirtualBox:~$ sudo dpkg -i virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb
+
+[sudo] пароль для feruz: 
+
+Выбор ранее не выбранного пакета virtualbox-7.1.
+
+(Чтение базы данных … на данный момент установлено 194090 файлов и каталогов.)
+
+Подготовка к распаковке virtualbox-7.1_7.1.2-164945~Ubuntu~jammy_amd64.deb …
+
+Распаковывается virtualbox-7.1 (7.1.2-164945~Ubuntu~jammy) …
+
+dpkg: зависимости пакетов не позволяют настроить пакет virtualbox-7.1:
+
+ virtualbox-7.1 зависит от libxcb-cursor0 (>= 0.0.99), однако:
+
+  Пакет libxcb-cursor0 не установлен.
+
+
+
+dpkg: ошибка при обработке пакета virtualbox-7.1 (--install):
+
+ проблемы зависимостей — оставляем не настроенным
+
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.8) …
+
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+
+Обрабатываются триггеры для shared-mime-info (2.1-2) …
+
+При обработке следующих пакетов произошли ошибки:
+
+ virtualbox-7.1
+
+feruz@feruz-VirtualBox:~$ sudo dpkg -r virtualbox-7.1
+
+(Чтение базы данных … на данный момент установлено 194854 файла и каталога.)
+
+Удаляется virtualbox-7.1 (7.1.2-164945~Ubuntu~jammy) …
+
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.8) …
+
+Обрабатываются триггеры для shared-mime-info (2.1-2) …
+
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+
+feruz@feruz-VirtualBox:~$ 
+

@@ -1,0 +1,926 @@
+feruz@feruz-VirtualBox:~$ sudo su
+
+[sudo] пароль для feruz: 
+
+root@feruz-VirtualBox:/home/feruz# mysql
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+Your MySQL connection id is 11
+
+Server version: 8.4.3 MySQL Community Server - GPL
+
+
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+
+affiliates. Other names may be trademarks of their respective
+
+owners.
+
+
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+mysql> show databases;
+
++--------------------+
+
+| Database           |
+
++--------------------+
+
+| information_schema |
+
+| mysql              |
+
+| performance_schema |
+
+| sys                |
+
++--------------------+
+
+4 rows in set (0.00 sec)
+
+
+
+mysql> CREATE DATABASE human_friends;
+
+Query OK, 1 row affected (0.06 sec)
+
+
+
+mysql> show databases;
+
++--------------------+
+
+| Database           |
+
++--------------------+
+
+| human_friends      |
+
+| information_schema |
+
+| mysql              |
+
+| performance_schema |
+
+| sys                |
+
++--------------------+
+
+5 rows in set (0.00 sec)
+
+
+
+mysql> use human_friends;
+
+Database changed
+
+mysql> CREATE TABLE `animal`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `animal_name` Varchar(20) NOT NULL,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.07 sec)
+
+
+
+mysql> -- Table animal
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `animal`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `animal_name` Varchar(20) NOT NULL,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+ERROR 1050 (42S01): Table 'animal' already exists
+
+mysql> 
+
+mysql> -- Table home_animal
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `home_animal`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `home_name` Varchar(20) NOT NULL,
+
+    ->   `livePlace` Varchar(20),
+
+    ->   `id_animal` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.06 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `animal_home` ON `home_animal` (`id_animal`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.05 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> -- Table cat
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `cat`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `cat_name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_home` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.02 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `home_cat` ON `cat` (`id_home`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.01 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> -- Table dog
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `dog`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `dog_name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_home` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.04 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `home_dog` ON `dog` (`id_home`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.02 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> -- Table hamster
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `hamster`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `hamster_name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_home` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `home_hamster` ON `hamster` (`id_home`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.11 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> 
+
+mysql> -- Table pack_animal
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `pack_animal`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `pack_name` Varchar(20) NOT NULL,
+
+    ->   `livePlace` Varchar(20),
+
+    ->   `id_animal` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `animal_pack` ON `pack_animal` (`id_animal`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.04 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> 
+
+mysql> 
+
+mysql> -- Table camel
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `camel`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_pack` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.02 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `pack_camel` ON `camel` (`id_pack`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.03 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> -- Table horse
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `horse`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_pack` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `pack_hourse` ON `horse` (`id_pack`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.05 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+mysql> -- Table mule
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE `mule`
+
+    -> (
+
+    ->   `id` Int NOT NULL AUTO_INCREMENT,
+
+    ->   `name` Varchar(30) NOT NULL,
+
+    ->   `date_birth` Date NOT NULL,
+
+    ->   `commands` Varchar(200),
+
+    ->   `color` Varchar(20),
+
+    ->   `id_pack` Int,
+
+    ->   PRIMARY KEY (`id`)
+
+    -> )
+
+    -> ;
+
+Query OK, 0 rows affected (0.02 sec)
+
+
+
+mysql> 
+
+mysql> CREATE INDEX `pack_mule` ON `mule` (`id_pack`)
+
+    -> ;
+
+Query OK, 0 rows affected (0.04 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> show tables;
+
++-------------------------+
+
+| Tables_in_human_friends |
+
++-------------------------+
+
+| animal                  |
+
+| camel                   |
+
+| cat                     |
+
+| dog                     |
+
+| hamster                 |
+
+| home_animal             |
+
+| horse                   |
+
+| mule                    |
+
+| pack_animal             |
+
++-------------------------+
+
+9 rows in set (0.00 sec)
+
+
+
+mysql> INSERT INTO pack_animal (pack_name, livePlace, id_animal) VALUES ('Вьючные', 'Скотный двор', 1);
+
+Query OK, 1 row affected (0.00 sec)
+
+
+
+mysql> INSERT INTO cat (cat_name, date_birth, commands, `color`, id_home)
+
+    -> VALUES
+
+    -> ('Murka', '2022-01-12', 'sit_down', 'ginger', 1),
+
+    -> ('Murzik', '2021-11-05', '', 'white', 1),
+
+    -> ('Kalambur', '2022-09-18', 'voice', 'black', 1);
+
+Query OK, 3 rows affected (0.03 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM cat;
+
++----+----------+------------+----------+--------+---------+
+
+| id | cat_name | date_birth | commands | color  | id_home |
+
++----+----------+------------+----------+--------+---------+
+
+|  1 | Murka    | 2022-01-12 | sit_down | ginger |       1 |
+
+|  2 | Murzik   | 2021-11-05 |          | white  |       1 |
+
+|  3 | Kalambur | 2022-09-18 | voice    | black  |       1 |
+
++----+----------+------------+----------+--------+---------+
+
+3 rows in set (0.00 sec)
+
+
+
+mysql> INSERT INTO dog (dog_name, date_birth, commands, `color`, id_home) VALUES ('Sharik', '2021-09-14', 'sit_down voice lie_down', 'ginger', 1), ('Rex', '2022-02-16', 'voice sit_down upport lie_down', 'brown', 1), ('Teena', '2022-04-21', 'sit_down lie_down voice', 'white', 1);
+
+Query OK, 3 rows affected (0.02 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM dog;
+
++----+----------+------------+--------------------------------+--------+---------+
+
+| id | dog_name | date_birth | commands                       | color  | id_home |
+
++----+----------+------------+--------------------------------+--------+---------+
+
+|  1 | Sharik   | 2021-09-14 | sit_down voice lie_down        | ginger |       1 |
+
+|  2 | Rex      | 2022-02-16 | voice sit_down upport lie_down | brown  |       1 |
+
+|  3 | Teena    | 2022-04-21 | sit_down lie_down voice        | white  |       1 |
+
++----+----------+------------+--------------------------------+--------+---------+
+
+3 rows in set (0.00 sec)
+
+
+
+mysql> INSERT INTO dog (dog_name, date_birth, commands, `color`, id_home) VALUES ('Goga', '2022-07-21',
+
+'', 'ginger', 1);
+
+Query OK, 1 row affected (0.01 sec)
+
+
+
+mysql> SELECT * FROM hamster;
+
+Empty set (0.01 sec)
+
+
+
+mysql> INSERT INTO hamster (hamster_name, date_birth, commands, `color`, id_home) VALUES ('Hamster_combat', '2024-01-21', '', 'ginger', 1);
+
+Query OK, 1 row affected (0.01 sec)
+
+
+
+mysql> SELECT * FROM hamster;
+
++----+----------------+------------+----------+--------+---------+
+
+| id | hamster_name   | date_birth | commands | color  | id_home |
+
++----+----------------+------------+----------+--------+---------+
+
+|  1 | Hamster_combat | 2024-01-21 |          | ginger |       1 |
+
++----+----------------+------------+----------+--------+---------+
+
+1 row in set (0.00 sec)
+
+
+
+mysql> INSERT INTO horse (name, date_birth, commands, `color`, id_pack) VALUES ('Belka', '2019-04-23', 'upport gallup', 'gray', 1), ('Savoy', '2018-09-06', 'upport gallup barier', 'white', 1);
+
+Query OK, 2 rows affected (0.03 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM horse;
+
++----+-------+------------+----------------------+-------+---------+
+
+| id | name  | date_birth | commands             | color | id_pack |
+
++----+-------+------------+----------------------+-------+---------+
+
+|  1 | Belka | 2019-04-23 | upport gallup        | gray  |       1 |
+
+|  2 | Savoy | 2018-09-06 | upport gallup barier | white |       1 |
+
++----+-------+------------+----------------------+-------+---------+
+
+2 rows in set (0.00 sec)
+
+
+
+mysql> INSERT INTO camel (name, date_birth, commands, `color`, id_pack) VALUES ('Camel1', '2019-04-23',
+
+'run', 'yellow', 1), ('Camel2', '2018-09-06', 'slow_down', 'light_brown', 1);
+
+Query OK, 2 rows affected (0.01 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM camel;
+
++----+--------+------------+-----------+-------------+---------+
+
+| id | name   | date_birth | commands  | color       | id_pack |
+
++----+--------+------------+-----------+-------------+---------+
+
+|  1 | Camel1 | 2019-04-23 | run       | yellow      |       1 |
+
+|  2 | Camel2 | 2018-09-06 | slow_down | light_brown |       1 |
+
++----+--------+------------+-----------+-------------+---------+
+
+2 rows in set (0.00 sec)
+
+
+
+mysql> DELETE FROM camel;
+
+Query OK, 2 rows affected (0.03 sec)
+
+
+
+mysql> SELECT * FROM camel;
+
+Empty set (0.00 sec)
+
+
+
+mysql> SELECT id, name, commands, color, id_pack
+
+    -> FROM horse
+
+    -> UNION
+
+    -> SELECT id, name, commands, color, id_pack
+
+    -> FROM mule;
+
++----+--------+----------------------+-------------+---------+
+
+| id | name   | commands             | color       | id_pack |
+
++----+--------+----------------------+-------------+---------+
+
+|  1 | Belka  | upport gallup        | gray        |       1 |
+
+|  2 | Savoy  | upport gallup barier | white       |       1 |
+
+|  3 | Horse1 | run                  | yellow      |       1 |
+
+|  4 | Horse2 | slow_down            | light_brown |       1 |
+
+|  1 | Mule1  | run                  | yellow      |       1 |
+
+|  2 | Mule2  | slow_down            | light_brown |       1 |
+
++----+--------+----------------------+-------------+---------+
+
+6 rows in set (0.27 sec)
+
+
+
+mysql> 
+
+mysql> CREATE TABLE young_animal (
+
+    -> id int NOT NULL,
+
+    -> name varchar(50),
+
+    -> date_birth Datetime,
+
+    -> commands varchar(200),
+
+    -> color varchar(20),
+
+    -> age varchar(50));
+
+Query OK, 0 rows affected (0.11 sec)
+
+
+
+mysql> INSERT INTO young_animal (id, name, date_birth, commands, color, age)
+
+    -> SELECT id, cat_name, date_birth, commands, color,
+
+    -> CONCAT(CAST(TIMESTAMPDIFF(YEAR, date_birth, NOW()) AS CHAR), " лет ", 
+
+    -> CAST(MOD(TIMESTAMPDIFF(MONTH, date_birth, NOW()), 12)  AS CHAR), " мес.") AS age 
+
+    -> FROM cat
+
+    -> WHERE TIMESTAMPDIFF(MONTH, date_birth, NOW()) BETWEEN 12 AND 36;
+
+Query OK, 3 rows affected (0.06 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO young_animal (id, name, date_birth, commands, color, age)
+
+    -> SELECT id, dog_name, date_birth, commands, color,
+
+    -> CONCAT(CAST(TIMESTAMPDIFF(YEAR, date_birth, NOW()) AS CHAR), " лет ", 
+
+    -> CAST(MOD(TIMESTAMPDIFF(MONTH, date_birth, NOW()), 12)  AS CHAR), " мес.") AS age 
+
+    -> FROM dog
+
+    -> WHERE TIMESTAMPDIFF(MONTH, date_birth, NOW()) BETWEEN 12 AND 36;
+
+Query OK, 3 rows affected (0.01 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO young_animal (id, name, date_birth, commands, color, age)
+
+    -> SELECT id, name, date_birth, commands, color,
+
+    -> CONCAT(CAST(TIMESTAMPDIFF(YEAR, date_birth, NOW()) AS CHAR), " лет ", 
+
+    -> CAST(MOD(TIMESTAMPDIFF(MONTH, date_birth, NOW()), 12)  AS CHAR), " мес.") AS age 
+
+    -> FROM horse
+
+    -> WHERE TIMESTAMPDIFF(MONTH, date_birth, NOW()) BETWEEN 12 AND 36 
+
+    -> UNION ALL
+
+    -> SELECT id, name, date_birth, commands, color,
+
+    -> CONCAT(CAST(TIMESTAMPDIFF(YEAR, date_birth, NOW()) AS CHAR), " лет ", 
+
+    -> CAST(MOD(TIMESTAMPDIFF(MONTH, date_birth, NOW()), 12)  AS CHAR), " мес.") AS age 
+
+    -> FROM mule
+
+    -> WHERE TIMESTAMPDIFF(MONTH, date_birth, NOW()) BETWEEN 12 AND 36;
+
+Query OK, 0 rows affected (0.00 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> SELECT * FROM (SELECT id, cat_name, dog_name, NULL as hamster_name, NULL as name, date_birth, commands, color FROM (
+
+    -> SELECT id, cat_name, NULL as dog_name, NULL AS hamster_name, NULL AS name, date_birth, commands, color FROM cat
+
+    -> UNION all 
+
+    -> SELECT id, NULL as cat_name, dog_name, NULL AS hamster_name, NULL AS name, date_birth, commands, color FROM dog) A
+
+    -> UNION ALL
+
+    -> SELECT id, NULL as cat_name, NULL as dog_name, hamster_name, NULL AS name, date_birth, commands, color FROM hamster) B
+
+    -> UNION ALL 
+
+    -> SELECT * FROM (
+
+    -> SELECT id, NULL AS cat_name, NULL AS dog_name, NULL AS hamster_name, name, date_birth, commands, color FROM horse
+
+    -> UNION ALL 
+
+    -> SELECT id, NULL AS cat_name, NULL AS dog_name, NULL AS hamster_name, name, date_birth, commands, color FROM mule 
+
+    -> ) C;
+
++----+----------+----------+----------------+--------+------------+--------------------------------+-------------+
+
+| id | cat_name | dog_name | hamster_name   | name   | date_birth | commands                       | color       |
+
++----+----------+----------+----------------+--------+------------+--------------------------------+-------------+
+
+|  1 | Murka    | NULL     | NULL           | NULL   | 2022-01-12 | sit_down                       | ginger      |
+
+|  2 | Murzik   | NULL     | NULL           | NULL   | 2021-11-05 |                                | white       |
+
+|  3 | Kalambur | NULL     | NULL           | NULL   | 2022-09-18 | voice                          | black       |
+
+|  1 | NULL     | Sharik   | NULL           | NULL   | 2021-09-14 | sit_down voice lie_down        | ginger      |
+
+|  2 | NULL     | Rex      | NULL           | NULL   | 2022-02-16 | voice sit_down upport lie_down | brown       |
+
+|  3 | NULL     | Teena    | NULL           | NULL   | 2022-04-21 | sit_down lie_down voice        | white       |
+
+|  4 | NULL     | Goga     | NULL           | NULL   | 2022-07-21 |                                | ginger      |
+
+|  1 | NULL     | NULL     | Hamster_combat | NULL   | 2024-01-21 |                                | ginger      |
+
+|  1 | NULL     | NULL     | NULL           | Belka  | 2019-04-23 | upport gallup                  | gray        |
+
+|  2 | NULL     | NULL     | NULL           | Savoy  | 2018-09-06 | upport gallup barier           | white       |
+
+|  3 | NULL     | NULL     | NULL           | Horse1 | 2019-04-23 | run                            | yellow      |
+
+|  4 | NULL     | NULL     | NULL           | Horse2 | 2018-09-06 | slow_down                      | light_brown |
+
+|  1 | NULL     | NULL     | NULL           | Mule1  | 2019-04-23 | run                            | yellow      |
+
+|  2 | NULL     | NULL     | NULL           | Mule2  | 2018-09-06 | slow_down                      | light_brown |
+
++----+----------+----------+----------------+--------+------------+--------------------------------+-------------+
+
+14 rows in set (0.00 sec)
+
+
+
+mysql> SELECT * FROM young_animal;
+
++----+----------+---------------------+--------------------------------+--------+---------------------+
+
+| id | name     | date_birth          | commands                       | color  | age                 |
+
++----+----------+---------------------+--------------------------------+--------+---------------------+
+
+|  1 | Murka    | 2022-01-12 00:00:00 | sit_down                       | ginger | 2 лет 9 мес.        |
+
+|  2 | Murzik   | 2021-11-05 00:00:00 |                                | white  | 2 лет 11 мес.       |
+
+|  3 | Kalambur | 2022-09-18 00:00:00 | voice                          | black  | 2 лет 1 мес.        |
+
+|  2 | Rex      | 2022-02-16 00:00:00 | voice sit_down upport lie_down | brown  | 2 лет 8 мес.        |
+
+|  3 | Teena    | 2022-04-21 00:00:00 | sit_down lie_down voice        | white  | 2 лет 5 мес.        |
+
+|  4 | Goga     | 2022-07-21 00:00:00 |                                | ginger | 2 лет 2 мес.        |
+
++----+----------+---------------------+--------------------------------+--------+---------------------+
+
+6 rows in set (0.00 sec)
+
+
+
+mysql> 
+
